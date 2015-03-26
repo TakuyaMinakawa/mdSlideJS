@@ -5,22 +5,35 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>mdSlideJS</title>
 	<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="/css/codemirror.css" type="text/css" media="all" />
 </head>
 <body>
-	<header class="">
+<header class="">
+	<p class="headTitle">mdSlideJS</p>
+</header>
+<div class="cf contents">
+	<section class="editorWrap">
+		<textarea class="editor" name="" id="editor_markdown"></textarea>
+	</section>
+	<section class="previewWrap">
+		<div class="preview">
+		</div>
+	</section>
+</div>
+<footer class="">
 
-	</header>
-	<div class="cf">
-		<section class="editorWrap">
-			<textarea class="editor" name="" id="editor"></textarea>
-		</section>
-		<section class="previewWrap">
-			<div class="preview">
-			</div>
-		</section>
-	</div>
-	<footer class="">
+</footer>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/markdown.js"></script>
+<script type="text/javascript">
+var mdEditor = CodeMirror.fromTextArea(document.getElementById('editor_markdown'), {
+	mode: "markdown",
+	lineNumbers: true,
+	indentUnit: 2,
+	autoCloseBrackets: true
+});
+mdEditor.save();
 
-	</footer>
+</script>
 </body>
 </html>
